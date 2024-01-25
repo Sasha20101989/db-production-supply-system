@@ -1,0 +1,28 @@
+﻿CREATE TABLE [Planning].[tbd_VIN_Numbers_Local] (
+    [VIN_Number_Local_Id] INT            IDENTITY (1, 1) NOT NULL,
+    [Order_Count]         INT            NULL,
+    [Plant]               INT            NULL,
+    [Line]                INT            NULL,
+    [Model]               NVARCHAR (5)   NULL,
+    [Local_VIN]           NVARCHAR (17)  NOT NULL,
+    [Date_Position]       DATE           NOT NULL,
+    [PJI]                 NVARCHAR (20)  NULL,
+    [Local_Code]          NVARCHAR (17)  NOT NULL,
+    [Local_Color]         NVARCHAR (5)   NULL,
+    [BC_Label]            NVARCHAR (50)  NULL,
+    [MOFF]                NVARCHAR (255) NULL,
+    [Status]              INT            NULL,
+    [N_In_Day]            INT            NULL,
+    [Next_Status]         BIGINT         NULL,
+    [Version]             NVARCHAR (20)  NULL,
+    [Order_Number]        INT            NULL,
+    [Market_Code]         NVARCHAR (10)  NULL,
+    [Countermark]         INT            NULL,
+    [Millenium]           NVARCHAR (10)  NULL,
+    [Week_Position]       NVARCHAR (8)   NULL,
+    [Day_Position]        INT            NULL,
+    [Order_ID]            INT            NOT NULL,
+    [VCD]                 NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_tbd_VIN_Numbers_Local] PRIMARY KEY CLUSTERED ([VIN_Number_Local_Id] ASC)
+);
+

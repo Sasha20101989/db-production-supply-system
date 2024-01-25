@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>db_production_supply_system</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{de548715-e1bb-49be-88de-8583f5b80246}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>db_production_supply_system</RootNamespace>
+    <AssemblyName>db_production_supply_system</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Customs\" />
+    <Folder Include="Customs\Tables\" />
+    <Folder Include="Inbound\" />
+    <Folder Include="Inbound\Tables\" />
+    <Folder Include="Users\" />
+    <Folder Include="Users\Tables\" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Partscontrol\" />
+    <Folder Include="Partscontrol\Tables\" />
+    <Folder Include="Docmapper\" />
+    <Folder Include="Docmapper\Tables\" />
+    <Folder Include="Planning\" />
+    <Folder Include="Planning\Tables\" />
+    <Folder Include="Inbound\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="Inbound\Stored Procedures\" />
+    <Folder Include="Users\Stored Procedures\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Synonyms\" />
+    <Folder Include="Docmapper\Stored Procedures\" />
+    <Folder Include="Master\" />
+    <Folder Include="Master\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="Planning\Stored Procedures\" />
+    <Folder Include="Master\Stored Procedures\" />
+    <Folder Include="Planning\Sequences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Customs\Tables\tbd_Customs_Clearance.sql" />
+    <Build Include="Inbound\Tables\tbd_Terms_Of_Delivery.sql" />
+    <Build Include="Inbound\Tables\tbd_Terms_Of_Container_Use.sql" />
+    <Build Include="Users\Tables\tbd_Users.sql" />
+    <Build Include="dbo\Tables\tbd_History_Of_Changes.sql" />
+    <Build Include="Inbound\Tables\tbd_Locations.sql" />
+    <Build Include="dbo\Tables\tbd_Log.sql" />
+    <Build Include="Inbound\Tables\tbd_Types_Of_Location.sql" />
+    <Build Include="Partscontrol\Tables\tbd_Types_Of_Order.sql" />
+    <Build Include="Partscontrol\Tables\tbd_Purchase_Orders.sql" />
+    <Build Include="Inbound\Tables\tbd_Containers_In_Lot.sql" />
+    <Build Include="Docmapper\Tables\tbd_Docmapper_Columns.sql" />
+    <Build Include="Inbound\Tables\tbd_Types_Of_Packing.sql" />
+    <Build Include="Customs\Tables\tbd_Customs_Parts.sql" />
+    <Build Include="Docmapper\Tables\tbd_Docmapper.sql" />
+    <Build Include="Inbound\Tables\tbd_Shippers.sql" />
+    <Build Include="Planning\Tables\tbd_VINs_In_Container.sql" />
+    <Build Include="Inbound\Tables\tbd_Types_Of_Container.sql" />
+    <Build Include="Inbound\Tables\tbd_Types_Of_Part.sql" />
+    <Build Include="Inbound\Tables\tbd_Transports.sql" />
+    <Build Include="Inbound\Tables\tbd_Lots.sql" />
+    <Build Include="Inbound\Tables\tbd_Carriers.sql" />
+    <Build Include="Inbound\Tables\tbd_Tracing.sql" />
+    <Build Include="Inbound\Tables\tbd_Parts_In_Invoice.sql" />
+    <Build Include="Docmapper\Tables\tbd_Docmapper_Content.sql" />
+    <Build Include="Inbound\Tables\tbd_Types_Of_Transport.sql" />
+    <Build Include="Inbound\Tables\tbd_Invoices.sql" />
+    <Build Include="Inbound\Tables\tbd_Cases.sql" />
+    <Build Include="Inbound\Tables\tbd_Parts_In_Container.sql" />
+    <Build Include="Security\NISSANEU_NE NMGR SQLSSRS Developer _ALL.sql" />
+    <Build Include="Security\NMGR_RU NMGR Live IS NMGR Team.sql" />
+    <Build Include="Security\NMGR_ru12571.sql" />
+    <Build Include="Security\NMGR_ru12205.sql" />
+    <Build Include="Security\NMGR_ru13779.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="Inbound\Stored Procedures\usp_Get_All_Lot_Items.sql" />
+    <Build Include="Users\Stored Procedures\usp_Get_User_By_Account.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Insert_Log.sql" />
+    <Build Include="Security\Customs.sql" />
+    <Build Include="Security\Docmapper.sql" />
+    <Build Include="Security\Inbound.sql" />
+    <Build Include="Security\Partscontrol.sql" />
+    <Build Include="Security\Planning.sql" />
+    <Build Include="Security\Users.sql" />
+    <Build Include="dbo\Synonyms\Bom_Parts.sql" />
+    <Build Include="Inbound\Views\uvw_Count_Containers_In_Lot.sql" />
+    <Build Include="Docmapper\Stored Procedures\usp_Add_New_Docmapper.sql" />
+    <Build Include="Planning\Tables\tbd_VIN_Numbers_Local.sql" />
+    <Build Include="Planning\Tables\tbd_Statuses_For_SFS_Upload.sql" />
+    <Build Include="Planning\Tables\tbd_Planned_Sequence.sql" />
+    <Build Include="Planning\Tables\tbd_Bound_VINs.sql" />
+    <Build Include="dbo\Tables\tbd_Sections.sql" />
+    <Build Include="Master\Tables\tbd_Processes_Steps.sql" />
+    <Build Include="Master\Tables\tbd_Processes.sql" />
+    <Build Include="Inbound\Views\uvw_Tracing_Export.sql" />
+    <Build Include="Inbound\Views\uvw_Containets_In_Plant.sql" />
+    <Build Include="Inbound\Views\uvw_Containers_In_TS.sql" />
+    <Build Include="Inbound\Views\uvw_Containers_In_STP.sql" />
+    <Build Include="Inbound\Views\uvw_Containers_In_CY.sql" />
+    <Build Include="Inbound\Views\uvw_Containers_In_CC.sql" />
+    <Build Include="Inbound\Views\uvw_Container_Docs_To_CSB.sql" />
+    <Build Include="Inbound\Views\uvw_Container_Cargo_Types.sql" />
+    <Build Include="dbo\Views\uvw_Mod_Var.sql" />
+    <Build Include="dbo\Functions\ufn_Get_Container_Location.sql" />
+    <Build Include="Planning\Stored Procedures\usp_Insert_PP_Sequence.sql" />
+    <Build Include="Docmapper\Stored Procedures\usp_Update_Docmapper_Item.sql" />
+    <Build Include="Docmapper\Stored Procedures\usp_Update_Docmapper_Content.sql" />
+    <Build Include="Docmapper\Stored Procedures\usp_Get_All_Docmapper_Items.sql" />
+    <Build Include="Docmapper\Stored Procedures\usp_Get_All_Docmapper_Content_Items.sql" />
+    <Build Include="Docmapper\Stored Procedures\usp_Get_All_Docmapper_Columns.sql" />
+    <Build Include="Docmapper\Stored Procedures\usp_Delete_Docmapper_Content.sql" />
+    <Build Include="Docmapper\Stored Procedures\usp_Add_New_Docmapper_Content.sql" />
+    <Build Include="Docmapper\Stored Procedures\usp_Add_New_Docmapper_Column.sql" />
+    <Build Include="dbo\Stored Procedures\usp_Get_All_Sections.sql" />
+    <Build Include="Master\Stored Procedures\usp_Get_All_Process_Steps.sql" />
+    <Build Include="Master\Stored Procedures\usp_Get_All_Processes.sql" />
+    <Build Include="Security\Master.sql" />
+    <Build Include="dbo\Synonyms\Bom_Mod_Var.sql" />
+    <Build Include="dbo\Synonyms\Bom_Int_Colors.sql" />
+    <Build Include="dbo\Synonyms\Bom_Ext_Colors.sql" />
+    <Build Include="dbo\Synonyms\Bom_End_Items.sql" />
+    <Build Include="Planning\Sequences\PPSequence.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="db-production-supply-system.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SqlSchemaCompare.scmp" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [Partscontrol]
+    AUTHORIZATION [NMGR\ru12571];
+
